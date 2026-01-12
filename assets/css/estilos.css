@@ -1,0 +1,70 @@
+/* Paleta moderna: tonos vibrantes y gradientes */
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 40%, #f0e7ff 100%);
+    min-height: 100vh;
+}
+.container {
+    max-width: 650px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 32px rgba(60,72,88,0.12);
+    padding: 36px 28px;
+}
+h1 {
+    text-align: center;
+    color: #3b0764;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+}
+.btn-custom {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #7c3aed 0%, #06b6d4 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 12px rgba(124,58,237,0.08);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-custom:hover {
+    background: linear-gradient(90deg, #06b6d4 0%, #7c3aed 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 20px rgba(6,182,212,0.12);
+}
+#salida {
+    margin-top: 28px;
+    min-height: 60px;
+}
+/* Tarjetas personalizadas para la nueva paleta */
+.card {
+    border-radius: 16px !important;
+    box-shadow: 0 2px 16px rgba(60,72,88,0.10);
+    border: none;
+}
+.card-title {
+    color: #7c3aed;
+    font-weight: 700;
+}
+.card[style*="#e3f2fd"] {
+    background: linear-gradient(90deg, #f0e7ff 0%, #bae6fd 100%) !important;
+}
+.card[style*="#fff3cd"] {
+    background: linear-gradient(90deg, #fef9c3 0%, #f0e7ff 100%) !important;
+}
+.card[style*="#d1f7c4"] {
+    background: linear-gradient(90deg, #bbf7d0 0%, #f0e7ff 100%) !important;
+}
+.card[style*="#f8bbd0"] {
+    background: linear-gradient(90deg, #fbcfe8 0%, #f0e7ff 100%) !important;
+}
+.card[style*="#ede7f6"] {
+    background: linear-gradient(90deg, #ede9fe 0%, #f0e7ff 100%) !important;
+}
+.card[style*="#b2dfdb"] {
+    background: linear-gradient(90deg, #99f6e4 0%, #f0e7ff 100%) !important;
+}
