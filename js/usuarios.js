@@ -33,7 +33,7 @@ class AdministradorUsuarios {
                 datos = datos.map((usuario, i) => {
                     const nombreNuevo = nombresEspanoles[i % nombresEspanoles.length].nombre;
                     // Genera username a partir del nombre
-                    const usernameNuevo = nombreNuevo.toLowerCase().replace(/ /g, '.');
+                    const usernameNuevo = nombreNuevo.toLowerCase().replaceAll(' ', '.');
                     return {
                         ...usuario,
                         name: nombreNuevo,
@@ -182,7 +182,7 @@ class AdministradorUsuarios {
             this.salida.innerHTML = '<div class="alert alert-info">Cargando datos...</div>';
             return;
         }
-        const nombres = this.usuarios.map(u => u.name).sort();
+        const nombres = this.usuarios.map(u => u.name).sort((a, b) => a.localeCompare(b));
         const tarjetas = nombres.map(nombre => `
             <div class="card mb-3 animate__animated animate__fadeInDown" style="background: #b2dfdb;">
                 <div class="card-body">
