@@ -34,10 +34,21 @@ class AdministradorUsuarios {
                     const nombreNuevo = nombresEspanoles[i % nombresEspanoles.length].nombre;
                     // Genera username a partir del nombre
                     const usernameNuevo = nombreNuevo.toLowerCase().replaceAll(' ', '.');
+                    // Genera dominio a partir del nombre de la empresa
+                    let dominioEmpresa = 'ejemplo.com';
+                    if (usuario.company && usuario.company.name) {
+                        dominioEmpresa = usuario.company.name
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]/g, '')
+                            + '.com';
+                    }
+                    // Genera email a partir del username y dominio de empresa
+                    const emailNuevo = `${usernameNuevo}@${dominioEmpresa}`;
                     return {
                         ...usuario,
                         name: nombreNuevo,
-                        username: usernameNuevo
+                        username: usernameNuevo,
+                        email: emailNuevo
                     };
                 });
                 this.usuarios = datos;
