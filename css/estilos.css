@@ -1,8 +1,46 @@
-/* Paleta moderna: tonos vibrantes y gradientes */
+/*
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    ESTILOS PERSONALIZADOS DE LA APLICACIÓN                    ║
+║                         Evaluación Final Módulo 4                             ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+DESCRIPCIÓN:
+    Hoja de estilos CSS personalizada que define la apariencia visual de la
+    aplicación de gestión de usuarios con una paleta moderna de colores vibrantes
+
+RELACIÓN CON OTROS ARCHIVOS:
+    └── index.html → Este archivo es importado en el <head> del HTML
+                     mediante <link rel="stylesheet" href="css/estilos.css">
+
+PALETA DE COLORES:
+    • Fondo: Gradiente degradado (gris-azul-violeta)
+    • Primario: #7c3aed (violeta)
+    • Secundario: #06b6d4 (cian)
+    • Títulos: #3b0764 (violeta oscuro)
+
+ESTRUCTURA:
+    1. Estilos del body y fondo general
+    2. Contenedor principal
+    3. Títulos (h1)
+    4. Botones personalizados
+    5. Contenedor de salida
+    6. Tarjetas con gradientes de colores
+*/
+
+/* ========================================== */
+/* ESTILOS GENERALES DEL BODY */
+/* ========================================== */
+/* Gradiente de fondo moderno aplicado a toda la página */
 body {
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 40%, #f0e7ff 100%);
     min-height: 100vh;
 }
+
+/* ========================================== */
+/* CONTENEDOR PRINCIPAL */
+/* ========================================== */
+/* Contenedor centrado con diseño de tarjeta elevada */
+/* RELACIÓN: Este estilo se aplica al div.container de index.html */
 .container {
     max-width: 650px;
     margin: 40px auto;
@@ -11,12 +49,23 @@ body {
     box-shadow: 0 6px 32px rgba(60,72,88,0.12);
     padding: 36px 28px;
 }
+
+/* ========================================== */
+/* TÍTULO PRINCIPAL */
+/* ========================================== */
+/* Estilo del h1 "Gestión de Usuarios" */
 h1 {
     text-align: center;
     color: #3b0764;
     margin-bottom: 32px;
     letter-spacing: 1px;
 }
+
+/* ========================================== */
+/* BOTONES PERSONALIZADOS */
+/* ========================================== */
+/* Estilos aplicados a todos los botones con clase .btn-custom */
+/* RELACIÓN: Estos estilos afectan a los 6 botones de control en index.html */
 .btn-custom {
     width: 100%;
     margin: 8px 0;
@@ -31,40 +80,73 @@ h1 {
     letter-spacing: 0.5px;
     transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
+
+/* Efecto hover de los botones con gradiente invertido y elevación */
 .btn-custom:hover {
     background: linear-gradient(90deg, #06b6d4 0%, #7c3aed 100%);
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 4px 20px rgba(6,182,212,0.12);
 }
+
+/* ========================================== */
+/* CONTENEDOR DE SALIDA DINÁMICA */
+/* ========================================== */
+/* Área donde se muestran los resultados de las operaciones */
+/* RELACIÓN: Estiliza el div#salida que es manipulado por js/usuarios.js */
 #salida {
     margin-top: 28px;
     min-height: 60px;
 }
-/* Tarjetas personalizadas para la nueva paleta */
+
+/* ========================================== */
+/* ESTILOS DE TARJETAS (CARDS) */
+/* ========================================== */
+/* Estilos base para todas las tarjetas Bootstrap */
+/* RELACIÓN: Estas tarjetas son generadas dinámicamente por los métodos en js/usuarios.js */
 .card {
     border-radius: 16px !important;
     box-shadow: 0 2px 16px rgba(60,72,88,0.10);
     border: none;
 }
+
+/* Títulos de las tarjetas */
 .card-title {
     color: #7c3aed;
     font-weight: 700;
 }
+
+/* ========================================== */
+/* GRADIENTES PERSONALIZADOS POR TIPO DE TARJETA */
+/* ========================================== */
+/* Cada método de usuarios.js aplica un color de fondo específico inline,
+   estos estilos sobrescriben esos colores con gradientes modernos */
+
+/* Tarjetas azules - Usadas en listarNombres() */
 .card[style*="#e3f2fd"] {
     background: linear-gradient(90deg, #f0e7ff 0%, #bae6fd 100%) !important;
 }
+
+/* Tarjetas amarillas - Usadas en mostrarInfoBasicaPorNombre() */
 .card[style*="#fff3cd"] {
     background: linear-gradient(90deg, #fef9c3 0%, #f0e7ff 100%) !important;
 }
+
+/* Tarjetas verdes - Usadas en mostrarDireccionPorNombre() */
 .card[style*="#d1f7c4"] {
     background: linear-gradient(90deg, #bbf7d0 0%, #f0e7ff 100%) !important;
 }
+
+/* Tarjetas rosas - Usadas en mostrarInfoAvanzadaPorNombre() */
 .card[style*="#f8bbd0"] {
     background: linear-gradient(90deg, #fbcfe8 0%, #f0e7ff 100%) !important;
 }
+
+/* Tarjetas violetas - Usadas en listarCompaniasYFrases() */
 .card[style*="#ede7f6"] {
     background: linear-gradient(90deg, #ede9fe 0%, #f0e7ff 100%) !important;
 }
+
+/* Tarjetas turquesas - Usadas en listarNombresOrdenados() */
 .card[style*="#b2dfdb"] {
     background: linear-gradient(90deg, #99f6e4 0%, #f0e7ff 100%) !important;
 }

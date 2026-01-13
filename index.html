@@ -1,31 +1,93 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    APLICACIÓN DE GESTIÓN DE USUARIOS                          ║
+║                         Evaluación Final Módulo 4                             ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+DESCRIPCIÓN:
+    Aplicación web que permite gestionar y visualizar información de usuarios
+    obtenidos desde la API de JSONPlaceholder (https://jsonplaceholder.typicode.com)
+
+RELACIÓN CON OTROS ARCHIVOS:
+    ├── css/estilos.css    → Define los estilos visuales de la interfaz
+    └── js/usuarios.js     → Contiene la lógica de negocio y gestión de datos
+
+ESTRUCTURA DEL ARCHIVO:
+    1. HEAD - Configuración y carga de dependencias externas
+    2. BODY - Interfaz de usuario (botones y contenedor de salida)
+    3. SCRIPTS - Carga de librerías JavaScript y lógica de la aplicación
+-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- ========================================== -->
+    <!-- METADATOS Y CONFIGURACIÓN BÁSICA -->
+    <!-- ========================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Usuarios - Evaluación</title>
-    <!-- Bootstrap CSS -->
+
+    <!-- ========================================== -->
+    <!-- HOJAS DE ESTILO EXTERNAS -->
+    <!-- ========================================== -->
+    <!-- Framework Bootstrap para componentes UI responsivos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Animate.css para animaciones modernas -->
+
+    <!-- Librería Animate.css para animaciones CSS predefinidas -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- CSS personalizado -->
+
+    <!-- Estilos personalizados de la aplicación (RELACIÓN: css/estilos.css) -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+    <!-- ========================================== -->
+    <!-- CONTENEDOR PRINCIPAL DE LA APLICACIÓN -->
+    <!-- ========================================== -->
     <div class="container">
+        <!-- Título principal de la aplicación -->
         <h1>Gestión de Usuarios</h1>
-        <!-- Botones asociados a los métodos de la clase AdministradorUsuarios -->
+        
+        <!-- ========================================== -->
+        <!-- PANEL DE BOTONES DE CONTROL -->
+        <!-- ========================================== -->
+        <!-- Cada botón ejecuta un método de la instancia 'usuarios' definida en js/usuarios.js -->
+        <!-- RELACIÓN: Todos los onclick llaman a métodos de AdministradorUsuarios -->
+        
+        <!-- Botón 1: Muestra todos los nombres de usuarios en tarjetas -->
         <button class="btn btn-custom" onclick="usuarios.listarNombres()">Listar nombres de usuarios</button>
+        
+        <!-- Botón 2: Solicita nombre y muestra username y email -->
         <button class="btn btn-custom" onclick="usuarios.mostrarInfoBasicaPorNombre()">Mostrar info básica por nombre</button>
+        
+        <!-- Botón 3: Solicita nombre y muestra dirección completa -->
         <button class="btn btn-custom" onclick="usuarios.mostrarDireccionPorNombre()">Mostrar dirección por nombre</button>
+        
+        <!-- Botón 4: Solicita nombre y muestra teléfono, web y datos de compañía -->
         <button class="btn btn-custom" onclick="usuarios.mostrarInfoAvanzadaPorNombre()">Mostrar info avanzada por nombre</button>
+        
+        <!-- Botón 5: Lista todas las compañías con sus frases corporativas -->
         <button class="btn btn-custom" onclick="usuarios.listarCompaniasYFrases()">Listar compañías y frases</button>
+        
+        <!-- Botón 6: Muestra nombres ordenados alfabéticamente -->
         <button class="btn btn-custom" onclick="usuarios.listarNombresOrdenados()">Listar nombres ordenados</button>
-        <!-- Contenedor de salida para mostrar tarjetas y mensajes -->
+        
+        <!-- ========================================== -->
+        <!-- CONTENEDOR DE SALIDA DINÁMICO -->
+        <!-- ========================================== -->
+        <!-- Aquí se renderiza el contenido generado por los métodos de js/usuarios.js -->
+        <!-- Este elemento es referenciado como 'salida' en la clase AdministradorUsuarios -->
         <div id="salida"></div>
     </div>
-    <!-- Bootstrap JS (opcional, para componentes interactivos) -->
+    
+    <!-- ========================================== -->
+    <!-- SCRIPTS JAVASCRIPT -->
+    <!-- ========================================== -->
+    <!-- Librería Bootstrap JS para componentes interactivos -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script principal de la aplicación (RELACIÓN CRÍTICA: js/usuarios.js) -->
+    <!-- Define la clase AdministradorUsuarios y crea la instancia global 'usuarios' -->
+    <!-- Esta instancia es utilizada por los eventos onclick de los botones -->
     <script src="js/usuarios.js"></script>
 </body>
 </html>

@@ -1,6 +1,14 @@
+// ==========================================
+// CLASE PRINCIPAL - ADMINISTRADOR DE USUARIOS
+// ==========================================
+// Esta clase gestiona todas las operaciones relacionadas con los usuarios
+// obtenidos desde la API y maneja la interacción con los botones del HTML
 
-// Clase principal para administrar los usuarios y asociada a los botones del HTML
 class AdministradorUsuarios {
+    // ==========================================
+    // CONSTRUCTOR - INICIALIZACIÓN DE LA CLASE
+    // ==========================================
+    // Inicializa las propiedades de la clase y ejecuta la carga de datos
     constructor() {
         // Almacena los usuarios obtenidos del endpoint
         this.usuarios = [];
@@ -10,8 +18,13 @@ class AdministradorUsuarios {
         this.obtenerDatos();
     }
 
-    // Obtiene los datos de usuarios usando XMLHttpRequest y reemplaza los nombres por nombres españoles
+    // ==========================================
+    // OBTENCIÓN DE DATOS DESDE LA API
+    // ==========================================
+    // Realiza una petición HTTP a la API de JSONPlaceholder usando XMLHttpRequest
+    // y reemplaza los nombres, usernames y emails con datos en español
     obtenerDatos() {
+        // Array de nombres en español para reemplazar los datos originales
         const nombresEspanoles = [
             { nombre: 'Carlos García' },
             { nombre: 'Juan Pérez' },
@@ -24,6 +37,7 @@ class AdministradorUsuarios {
             { nombre: 'Ximena Castillo' },
             { nombre: 'Joselin Herrera' }
         ];
+        // Creación del objeto XMLHttpRequest para la petición HTTP
         const xhr = new XMLHttpRequest();
         xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
         xhr.onreadystatechange = () => {
@@ -57,12 +71,18 @@ class AdministradorUsuarios {
         xhr.send();
     }
 
-    // Limpia el contenido del div de salida
+    // ==========================================
+    // LIMPIEZA DEL ÁREA DE SALIDA
+    // ==========================================
+    // Limpia el contenido del div de salida en el HTML
     limpiarSalida() {
         this.salida.innerHTML = '';
     }
 
-    // Muestra los nombres de todos los usuarios en tarjetas Bootstrap
+    // ==========================================
+    // LISTAR TODOS LOS NOMBRES DE USUARIOS
+    // ==========================================
+    // Muestra los nombres de todos los usuarios en tarjetas Bootstrap con animaciones
     listarNombres() {
         this.limpiarSalida();
         if (this.usuarios.length === 0) {
@@ -82,7 +102,11 @@ class AdministradorUsuarios {
         console.log('Nombres de usuarios:', this.usuarios.map(u => u.name));
     }
 
-    // Solicita el nombre de usuario y muestra su info básica en una tarjeta
+    // ==========================================
+    // MOSTRAR INFORMACIÓN BÁSICA POR NOMBRE
+    // ==========================================
+    // Solicita el nombre de usuario mediante prompt y muestra su información
+    // básica (username y email) en una tarjeta con animación
     mostrarInfoBasicaPorNombre() {
         this.limpiarSalida();
         if (this.usuarios.length === 0) {
@@ -108,7 +132,11 @@ class AdministradorUsuarios {
         }
     }
 
-    // Solicita el nombre de usuario y muestra su dirección en una tarjeta
+    // ==========================================
+    // MOSTRAR DIRECCIÓN POR NOMBRE
+    // ==========================================
+    // Solicita el nombre de usuario mediante prompt y muestra su dirección completa
+    // incluyendo calle, suite, ciudad, código postal y coordenadas geográficas
     mostrarDireccionPorNombre() {
         this.limpiarSalida();
         if (this.usuarios.length === 0) {
@@ -138,7 +166,11 @@ class AdministradorUsuarios {
         }
     }
 
-    // Solicita el nombre de usuario y muestra su info avanzada en una tarjeta
+    // ==========================================
+    // MOSTRAR INFORMACIÓN AVANZADA POR NOMBRE
+    // ==========================================
+    // Solicita el nombre de usuario mediante prompt y muestra información avanzada
+    // como teléfono, sitio web, compañía, frase corporativa y BS de la empresa
     mostrarInfoAvanzadaPorNombre() {
         this.limpiarSalida();
         if (this.usuarios.length === 0) {
@@ -167,7 +199,11 @@ class AdministradorUsuarios {
         }
     }
 
-    // Lista todas las compañías y su frase en tarjetas
+    // ==========================================
+    // LISTAR COMPAÑÍAS Y SUS FRASES
+    // ==========================================
+    // Muestra todas las compañías asociadas a los usuarios junto con
+    // sus frases corporativas (catchPhrase) en tarjetas con animaciones
     listarCompaniasYFrases() {
         this.limpiarSalida();
         if (this.usuarios.length === 0) {
@@ -186,7 +222,11 @@ class AdministradorUsuarios {
         console.log('Compañías y frases:', this.usuarios.map(u => u.company));
     }
 
-    // Lista los nombres de usuarios ordenados alfabéticamente en tarjetas
+    // ==========================================
+    // LISTAR NOMBRES ORDENADOS ALFABÉTICAMENTE
+    // ==========================================
+    // Ordena los nombres de usuarios alfabéticamente usando localeCompare
+    // y los muestra en tarjetas con animaciones
     listarNombresOrdenados() {
         this.limpiarSalida();
         if (this.usuarios.length === 0) {
@@ -206,5 +246,9 @@ class AdministradorUsuarios {
     }
 }
 
-// Instancia global asociada a los botones del HTML
+// ==========================================
+// INSTANCIA GLOBAL
+// ==========================================
+// Crea una instancia global de AdministradorUsuarios que se asocia
+// a los botones del HTML para ejecutar los diferentes métodos
 const usuarios = new AdministradorUsuarios();
