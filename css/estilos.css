@@ -4,27 +4,6 @@
 ║                         Evaluación Final Módulo 4                             ║
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 
-DESCRIPCIÓN:
-    Hoja de estilos CSS personalizada que define la apariencia visual de la
-    aplicación de gestión de usuarios con una paleta moderna de colores vibrantes
-
-RELACIÓN CON OTROS ARCHIVOS:
-    └── index.html → Este archivo es importado en el <head> del HTML
-                     mediante <link rel="stylesheet" href="css/estilos.css">
-
-PALETA DE COLORES:
-    • Fondo: Gradiente degradado (gris-azul-violeta)
-    • Primario: #7c3aed (violeta)
-    • Secundario: #06b6d4 (cian)
-    • Títulos: #3b0764 (violeta oscuro)
-
-ESTRUCTURA:
-    1. Estilos del body y fondo general
-    2. Contenedor principal
-    3. Títulos (h1)
-    4. Botones personalizados
-    5. Contenedor de salida
-    6. Tarjetas con gradientes de colores
 */
 
 /* ========================================== */
