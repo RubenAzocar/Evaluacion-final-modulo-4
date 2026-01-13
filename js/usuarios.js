@@ -1,3 +1,48 @@
+/*
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    LÓGICA DE GESTIÓN DE USUARIOS                              ║
+║                         Evaluación Final Módulo 4                             ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+DESCRIPCIÓN:
+    Módulo JavaScript que implementa la clase AdministradorUsuarios para gestionar
+    datos de usuarios obtenidos desde la API de JSONPlaceholder y mostrarlos
+    dinámicamente en la interfaz HTML
+
+RELACIÓN CON OTROS ARCHIVOS:
+    ├── index.html → Este script es importado al final del body
+    │                Los botones HTML ejecutan métodos de este script mediante onclick
+    │                Se accede al div#salida para renderizar contenido dinámico
+    │
+    └── css/estilos.css → Los elementos generados usan clases CSS de Bootstrap
+                          y estilos personalizados definidos en estilos.css
+                          (card, card-body, card-title, card-text, alert, etc.)
+
+FLUJO DE DATOS:
+    1. Al cargar la página, se crea automáticamente la instancia 'usuarios'
+    2. El constructor llama a obtenerDatos() que hace petición a la API
+    3. Los datos se transforman (nombres españoles, emails personalizados)
+    4. El usuario hace clic en un botón del HTML
+    5. Se ejecuta el método correspondiente de la clase
+    6. El método genera HTML dinámico (tarjetas Bootstrap)
+    7. El contenido se inyecta en el div#salida del index.html
+    8. CSS personalizado aplica estilos y animaciones
+
+API UTILIZADA:
+    • Endpoint: https://jsonplaceholder.typicode.com/users
+    • Método: GET
+    • Tecnología: XMLHttpRequest
+    • Formato de respuesta: JSON (array de 10 usuarios)
+
+CARACTERÍSTICAS:
+    • Manipulación del DOM
+    • Peticiones HTTP asíncronas
+    • Transformación de datos
+    • Generación dinámica de HTML
+    • Búsqueda y filtrado de datos
+    • Ordenamiento alfabético
+*/
+
 // ==========================================
 // CLASE PRINCIPAL - ADMINISTRADOR DE USUARIOS
 // ==========================================
